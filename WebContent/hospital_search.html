@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="user_search.css">
+<meta charset="ISO-8859-1">
+<title>Products</title>
+<script>
+function validateform(){
+	var uid=document.myform.uid.value;
+	var product=document.myform.product.value;
+	var Pincode=document.myform.pincode.value;
+	if(uid.length==0 && product.length==0 && Pincode.length==0){
+		alert("Atleast one field is required");
+		return false;
+	}
+}
+
+</script>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="logo">BLOOD DONATION</a>
+        <div class="header-right">
+            <a class="active" href="hospital_dashboard.html">Home</a> <a href="AboutUs.html">About Us</a>
+        </div>
+    </div>
+
+            
+    <div class="loginbox1">
+        <form name="myform" method="post" action="hbg_search.jsp" onsubmit="return validateform()">
+		
+        <h3>BLOOD GROUPS:</h3>
+        <input list="bloodgroups" name="uid" required="required"><br>
+        <datalist id="bloodgroups">
+            <option value="A+">
+            <option value="A-">
+            <option value="B+">
+            <option value="B-">
+            <option value="AB+">
+            <option value="AB-">
+            <option value="O+">
+            <option value="O-">
+        </datalist>
+
+        <h3>Pincode:</h3>
+        <input type="text" name="pincode"><br>
+
+        <input type="submit" value= "search">
+
+        </form>
+    </div>
+    <div id="footer">
+        <p>CREATED BY TEAM-6</p>
+        <p>EVERY DONOR IS A LIFE SAVER!!!</p>
+    </div>
+
+</body>
+</html>
